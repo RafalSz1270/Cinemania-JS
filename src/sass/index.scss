@@ -23,6 +23,7 @@ html {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -36,16 +37,27 @@ header {
   height: 48px;
   width: 100%;
   position: relative;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.06px;
+  text-align: center;
+  color: #b7b7b7;
 }
 
 header .logo-container {
   flex-shrink: 0;
 }
 
-header .logo-link {
+header a.logo-link {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+header a:active,
+header a:hover,
+header a:focus {
+  color: #f87719;
 }
 
 header span.logo-text {
@@ -73,6 +85,11 @@ header .theme-switch {
   flex-shrink: 0;
 }
 
+.theme-switch img {
+  width: 44px;
+  height: 18px;
+}
+
 ///************///
 ///************///
 ///MEDIA TABLET///
@@ -80,8 +97,22 @@ header .theme-switch {
 ///************///
 
 @media screen and (min-width: 768px) {
+  body {
+    margin: 0 32px;
+  }
+
+  header {
+    height: 60px;
+  }
+
   header span.logo-text {
     display: inline-block;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: center;
+    color: white;
   }
 
   header .main-menu-list {
@@ -90,6 +121,11 @@ header .theme-switch {
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  header a {
+    font-weight: 500;
+    line-height: 16.41px;
   }
 
   header .mobile-menu-button {
