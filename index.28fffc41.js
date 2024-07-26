@@ -1,0 +1,2 @@
+(()=>{const n=document.getElementById("myModal"),e=document.getElementById("myBtn"),t=document.getElementsByClassName("close")[0],o=document.getElementById("toggleLibrary");e.onclick=function(){n.style.display="block"},t.onclick=function(){n.style.display="none"},window.onclick=function(e){e.target==n&&(n.style.display="none")},o.onclick=function(){"Dodaj do My library"===o.innerText?o.innerText="Usuń z My library":o.innerText="Dodaj do My library"}})();
+//# sourceMappingURL=index.28fffc41.js.map
