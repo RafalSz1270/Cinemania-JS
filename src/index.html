@@ -13,4 +13,29 @@
 
     <include src="./partials/example.html"></include>
   </body>
+  <!-- Trigger/Open The Modal -->
+  <button id="myBtn">Otwórz Okno Modalne</button>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Tytuł Filmu</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <img src="https://via.placeholder.com/200x300" alt="Plakat filmu" />
+        <p><strong>Ocena:</strong> 8.5/10</p>
+        <p><strong>Popularność:</strong> 12345</p>
+        <p>
+          <strong>Opis:</strong> To jest krótki opis zawartości filmu. Jest to
+          ekscytująca historia pełna niesamowitych zwrotów akcji.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button id="toggleLibrary">Dodaj do My library</button>
+      </div>
+    </div>
+  </div>
 </html>
