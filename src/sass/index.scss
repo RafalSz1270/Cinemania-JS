@@ -57,7 +57,7 @@ header img {
   height: 32px;
 }
 
-.main-menu {
+header .main-menu {
   position: absolute; /* Add this */
   left: 50%; /* Add this */
   transform: translateX(-50%); /* Add this */
