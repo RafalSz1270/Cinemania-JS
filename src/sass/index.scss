@@ -3,6 +3,7 @@
 :root {
   background-color: black;
   color: white;
+  font-family: Roboto;
 }
 
 html {
@@ -12,7 +13,6 @@ html {
 * {
   margin: 0;
   padding: 0;
-  font-family: Roboto;
 }
 
 *,
@@ -35,7 +35,7 @@ header {
   align-items: center;
   height: 48px;
   width: 100%;
-  position: relative; /* Add this */
+  position: relative;
 }
 
 header .logo-container {
@@ -58,9 +58,9 @@ header img {
 }
 
 header .main-menu {
-  position: absolute; /* Add this */
-  left: 50%; /* Add this */
-  transform: translateX(-50%); /* Add this */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
 }
