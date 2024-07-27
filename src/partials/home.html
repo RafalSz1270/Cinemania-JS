@@ -1,191 +1,223 @@
 <section>
-    <div class="home-txt-div">
-        <h2 class="weekly-home">WEEKLY TRENDS</h2>
-        <a class="see-all-home">See all</a>
-    </div>
-    <div id="movie-container" class="movie-home-div"></div>
-    <div class="upcoming-div">
-        <h2 class="weekly-home">UPCOMING THIS MONTH</h2>
-    </div>
+  <div class="home-txt-div">
+    <h2 class="weekly-home">WEEKLY TRENDS</h2>
+    <a class="see-all-home">See all</a>
+  </div>
+  <div id="movie-container" class="movie-home-div"></div>
+  <div class="upcoming-div">
+    <h2 class="weekly-home">UPCOMING THIS MONTH</h2>
+  </div>
 </section>
 
 <style>
+  .home-txt-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 24px 0;
+  }
+
+  .weekly-home {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-family: Roboto;
+  }
+
+  .see-all-home {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    color: #f87719;
+    font-family: Roboto;
+  }
+
+  .movie-head-poster {
+    width: 280px;
+    height: 406px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 24px 2px #01010173;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .movie-home-div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .movie-head-t-title {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .movie-head-t-info {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #b7b7b7;
+  }
+
+  .upcoming-div {
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .movie-head-poster:nth-child(n + 2) {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
     .home-txt-div {
-        display: flex;
-        justify-content: space-between;
-        margin: 40px 0 24px 0;
+      margin-top: 52px;
     }
 
     .weekly-home {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 18.75px;
-        font-family: Roboto;
+      font-size: 24px;
+      line-height: 28.13px;
     }
 
     .see-all-home {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 18.75px;
-        color: #F87719;
-        font-family: Roboto;
-    }
-
-    .movie-head-poster {
-        width: 280px;
-        height: 406px;
-        background-size: cover;
-        background-position: center;
-        box-shadow: 1px 1px 24px 2px #01010173;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 10px;
-        box-sizing: border-box;
-        border-radius: 5px;
+      font-size: 24px;
+      line-height: 28.13px;
     }
 
     .movie-home-div {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .movie-head-t-title {
-        color: #fff;
-        font-family: Roboto;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 20px;
+    .movie-head-poster {
+      width: 224px;
+      height: 325px;
+      padding: 12px;
     }
 
     .movie-head-t-info {
-        font-family: Roboto;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 20px;
-        color: #B7B7B7;
+      line-height: 18px;
+    }
+
+    .movie-head-t-title {
+      line-height: 18px;
     }
 
     .upcoming-div {
-        margin-top: 32px;
+      margin-top: 42px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .home-txt-div {
+      margin: 80px 0 28px 0;
     }
 
-    @media screen and (max-width: 767px) {
-        .movie-head-poster:nth-child(n+2) {
-            display: none;
-        }
+    .weekly-home {
+      font-size: 28px;
+      line-height: 32.81px;
     }
 
-    @media screen and (min-width: 768px) {
-        .home-txt-div {
-            margin-top: 52px;
-        }
-
-        .weekly-home {
-            font-size: 24px;
-            line-height: 28.13px;
-        }
-
-        .see-all-home {
-            font-size: 24px;
-            line-height: 28.13px;
-        }
-
-        .movie-home-div {
-            gap: 16px;
-        }
-
-        .movie-head-poster {
-            width: 224px;
-            height: 325px;
-            padding: 12px;
-        }
-
-        .movie-head-t-info {
-            line-height: 18px;
-        }
-
-        .movie-head-t-title {
-            line-height: 18px;
-        }
-
-        .upcoming-div {
-            margin-top: 42px;
-        }
+    .see-all-home {
+      font-size: 28px;
+      line-height: 32.81px;
     }
 
-    @media screen and (min-width: 1280px) {
-        .home-txt-div {
-            margin: 80px 0 28px 0;
-        }
-
-        .weekly-home {
-            font-size: 28px;
-            line-height: 32.81px;
-        }
-
-        .see-all-home {
-            font-size: 28px;
-            line-height: 32.81px;
-        }
-
-        .movie-head-poster {
-            width: 395px;
-            height: 574px;
-            padding: 20px;
-        }
-
-        .movie-head-t-info {
-            font-size: 20px;
-            line-height: 23.44px;
-        }
-
-        .movie-head-t-title {
-            font-size: 20px;
-            line-height: 23.44px;
-        }
-
-        .upcoming-div {
-            margin-top: 60px;
-        }
+    .movie-head-poster {
+      width: 395px;
+      height: 574px;
+      padding: 20px;
     }
+
+    .movie-head-t-info {
+      font-size: 20px;
+      line-height: 23.44px;
+    }
+
+    .movie-head-t-title {
+      font-size: 20px;
+      line-height: 23.44px;
+    }
+
+    .upcoming-div {
+      margin-top: 60px;
+    }
+  }
 </style>
 
 <script>
-async function fetchMovies() {
-    const apiKey = '5b2561cb57ffa8e6a9098e26cf7f9cbf';  
-    const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`;
+  async function fetchMoviesData() {
+    const apiKey = '5b2561cb57ffa8e6a9098e26cf7f9cbf';
+    const trendingUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`;
+    const genreUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`;
 
     try {
-        const response = await fetch(url);
-        const data = await response.json();
+      // Fetch trending movies
+      const response = await fetch(trendingUrl);
+      const movieData = await response.json();
+      const movies = movieData.results.slice(0, 3);
 
-        const movieContainer = document.getElementById('movie-container');
-        movieContainer.innerHTML = '';
+      // Fetch genres
+      const genreResponse = await fetch(genreUrl);
+      const genreData = await genreResponse.json();
+      const genres = genreData.genres;
 
-        data.results.slice(0, 3).forEach(movie => { 
-            const movieElement = document.createElement('div');
-            movieElement.className = 'movie-head-poster';
-            movieElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+      // Create a map of genre IDs to genre names
+      const genreMap = {};
+      genres.forEach(genre => {
+        genreMap[genre.id] = genre.name;
+      });
 
-            const title = document.createElement('p');
-            title.textContent = movie.title;
-            title.className = 'movie-head-t-title';
+      // Map genre IDs to genre names in movies
+      movies.forEach(movie => {
+        movie.genre_names = movie.genre_ids.map(id => genreMap[id]).join(', ');
+      });
 
-            const genre = document.createElement('p');
-            genre.textContent = `${movie.genre_ids[0]} | ${new Date(movie.release_date).getFullYear()}`;
-            genre.className = 'movie-head-t-info';
-
-            movieElement.appendChild(title);
-            movieElement.appendChild(genre);
-
-            movieContainer.appendChild(movieElement);
-        });
+      return movies;
     } catch (error) {
-        console.error('Error fetching movies:', error);
+      console.error('Error fetching movies or genres:', error);
+      return [];
     }
-}
+  }
 
-fetchMovies();
+  function displayMovies(movies) {
+    const movieContainer = document.getElementById('movie-container');
+    movieContainer.innerHTML = '';
+
+    movies.forEach(movie => {
+      const movieElement = document.createElement('div');
+      movieElement.className = 'movie-head-poster';
+      movieElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+
+      const title = document.createElement('p');
+      title.textContent = movie.title;
+      title.className = 'movie-head-t-title';
+
+      const genres = movie.genre_names.split(', ').slice(0, 2).join(', ');
+      const genre = document.createElement('p');
+      genre.textContent = `${genres} | ${new Date(
+        movie.release_date
+      ).getFullYear()}`;
+      genre.className = 'movie-head-t-info';
+
+      movieElement.appendChild(title);
+      movieElement.appendChild(genre);
+
+      movieContainer.appendChild(movieElement);
+    });
+  }
+
+  async function init() {
+    const movies = await fetchMoviesData();
+    displayMovies(movies);
+  }
+
+  init();
 </script>
