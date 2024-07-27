@@ -188,10 +188,10 @@
   }
 
   function displayMovies(movies) {
-    const movieContainer = document.getElementById('movie-container');
+    const movieContainer = document.querySelector('#movie-container');
     movieContainer.innerHTML = '';
 
-    movies.forEach(movie => {
+    const movieElements = movies.map(movie => {
       const movieElement = document.createElement('div');
       movieElement.className = 'movie-head-poster';
       movieElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
@@ -210,8 +210,10 @@
       movieElement.appendChild(title);
       movieElement.appendChild(genre);
 
-      movieContainer.appendChild(movieElement);
+      return movieElement;
     });
+
+    movieElements.forEach(element => movieContainer.appendChild(element));
   }
 
   async function init() {
