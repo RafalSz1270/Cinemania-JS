@@ -30,6 +30,8 @@ body {
   margin: 0 20px;
 }
 
+// Header section styles start //
+
 header {
   display: flex;
   justify-content: space-between;
@@ -89,6 +91,9 @@ header .theme-switch {
   width: 44px;
   height: 18px;
 }
+
+// Modal section styles start //
+
 .modal {
   display: none;
   position: fixed;
@@ -195,8 +200,6 @@ header .theme-switch {
   gap: 8px;
 }
 
-// Hero section style end //
-
 ///************///
 ///************///
 ///MEDIA TABLET///
@@ -207,6 +210,8 @@ header .theme-switch {
   body {
     margin: 0 32px;
   }
+
+  // Header section styles start //
 
   header {
     height: 60px;
@@ -259,8 +264,6 @@ header .theme-switch {
     width: 262px;
     height: 40px;
   }
-
-  // Hero section end //
 }
 
 ///*************///
@@ -288,6 +291,4 @@ header .theme-switch {
     width: 291px;
     height: 48px;
   }
-
-  // Hero section end //
 }
