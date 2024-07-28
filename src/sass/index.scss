@@ -164,10 +164,23 @@ header .theme-switch {
 
 .hero {
   position: relative;
-  // background-image: url();
+  background: linear-gradient(
+      to right,
+      black 40%,
+      rgba(0, 0, 0, 0.8) 60%,
+      rgba(0, 0, 0, 0.6) 70%,
+      rgba(0, 0, 0, 0.4) 80%,
+      transparent 100%
+    ),
+    url('https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qkhZRqCWqJ376sBzD4MeAO2w4wv.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
 }
 
 .hero-details {
@@ -270,6 +283,10 @@ header .theme-switch {
 
   // Hero section start //
 
+  .hero {
+    height: 432px;
+  }
+
   .right-hero-button {
     width: 128px;
     height: 40px;
@@ -298,6 +315,10 @@ header .theme-switch {
 
 @media screen and (min-width: 1280px) {
   // Hero section start //
+
+  .hero {
+    height: 720px;
+  }
 
   .left-hero-button {
     width: 139px;
