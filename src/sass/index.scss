@@ -153,6 +153,28 @@ header .theme-switch {
 
 // Hero section styles start //
 
+.part-one {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  background-image: url();
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.hero-details {
+  position: relative;
+  z-index: 1;
+  width: 242px;
+  height: 286px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .left-hero-button {
   width: 117px;
   height: 38px;
