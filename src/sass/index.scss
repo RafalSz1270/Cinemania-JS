@@ -330,8 +330,12 @@ header .theme-switch {
   width: 100%;
 }
 
+div.hero {
+  margin: 0;
+}
+
 .hero {
-  margin: 0 auto;
+  margin: 0;
   position: relative;
   background: linear-gradient(
       to right,
