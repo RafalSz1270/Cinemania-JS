@@ -30,6 +30,8 @@ body {
   margin: 0 20px;
 }
 
+// Header section styles start //
+
 header {
   display: flex;
   justify-content: space-between;
@@ -89,6 +91,9 @@ header .theme-switch {
   width: 44px;
   height: 18px;
 }
+
+// Modal section styles start //
+
 .modal {
   display: none;
   position: fixed;
@@ -103,7 +108,6 @@ header .theme-switch {
 }
 
 .modal-content {
-  
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -152,6 +156,50 @@ header .theme-switch {
   align-items: center;
 }
 
+// Hero section styles start //
+
+.left-hero-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  color: rgba(17, 17, 17, 1);
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.right-hero-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.hero-button-block {
+  width: 242px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+
 ///************///
 ///************///
 ///MEDIA TABLET///
@@ -162,6 +210,8 @@ header .theme-switch {
   body {
     margin: 0 32px;
   }
+
+  // Header section styles start //
 
   header {
     height: 60px;
@@ -193,8 +243,52 @@ header .theme-switch {
   header .mobile-menu-button {
     display: none;
   }
+
+  // Hero section start //
+
+  .right-hero-button {
+    width: 128px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .left-hero-button {
+    width: 128px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .hero-button-block {
+    width: 262px;
+    height: 40px;
+  }
 }
 
 ///*************///
 ///MEDIA DESKTOP///
 ///*************///
+
+@media screen and (min-width: 1280px) {
+  // Hero section start //
+
+  .left-hero-button {
+    width: 139px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .right-hero-button {
+    width: 139px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero-button-block {
+    width: 291px;
+    height: 48px;
+  }
+}
