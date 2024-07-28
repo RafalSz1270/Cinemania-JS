@@ -1,0 +1,282 @@
+<section>
+  <div class="home-txt-div">
+    <h2 class="weekly-home">WEEKLY TRENDS</h2>
+    <a class="see-all-home">See all</a>
+  </div>
+  <div id="movie-container" class="movie-home-div"></div>
+  <div class="upcoming-div">
+    <h2 class="weekly-home">UPCOMING THIS MONTH</h2>
+  </div>
+  <svg width="14" height="14">
+    <use href="./images/fullStar.svg"></use>
+  </svg>
+  <img src="./images/fullStar.svg" alt="" />
+  <img src="./images/halfStar.svg" alt="" />
+  <img src="./images/emptyStar.svg" alt="" />
+</section>
+
+<style>
+  .home-txt-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 24px 0;
+  }
+
+  .weekly-home {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-family: Roboto;
+  }
+
+  .see-all-home {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    color: #f87719;
+    font-family: Roboto;
+  }
+
+  .movie-head-poster {
+    width: 280px;
+    height: 406px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 24px 2px #01010173;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .movie-home-div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .movie-head-t-title {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .movie-head-t-info {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #b7b7b7;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .star-rating {
+    font-size: 14px;
+    color: #ffd700; /* Gold color for stars */
+  }
+
+  .upcoming-div {
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .movie-head-poster:nth-child(n + 2) {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .home-txt-div {
+      margin-top: 52px;
+    }
+
+    .weekly-home {
+      font-size: 24px;
+      line-height: 28.13px;
+    }
+
+    .see-all-home {
+      font-size: 24px;
+      line-height: 28.13px;
+    }
+
+    .movie-home-div {
+      gap: 16px;
+    }
+
+    .movie-head-poster {
+      width: 224px;
+      height: 325px;
+      padding: 12px;
+    }
+
+    .movie-head-t-info {
+      line-height: 18px;
+    }
+
+    .movie-head-t-title {
+      line-height: 18px;
+    }
+
+    .upcoming-div {
+      margin-top: 42px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .home-txt-div {
+      margin: 80px 0 28px 0;
+    }
+
+    .weekly-home {
+      font-size: 28px;
+      line-height: 32.81px;
+    }
+
+    .see-all-home {
+      font-size: 28px;
+      line-height: 32.81px;
+    }
+
+    .movie-head-poster {
+      width: 395px;
+      height: 574px;
+      padding: 20px;
+    }
+
+    .movie-head-t-info {
+      font-size: 20px;
+      line-height: 23.44px;
+    }
+
+    .movie-head-t-title {
+      font-size: 20px;
+      line-height: 23.44px;
+    }
+
+    .upcoming-div {
+      margin-top: 60px;
+    }
+  }
+</style>
+
+<script type="module">
+  import { starSvg } from './starIcons.js';
+
+  const API_KEY = '5b2561cb57ffa8e6a9098e26cf7f9cbf';
+  const BASE_URL = 'https://api.themoviedb.org/3';
+  const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+
+  function preloadStarImages() {
+    ['full', 'half', 'empty'].forEach(type => {
+      const img = new Image();
+      img.src = `/images/${type}Star.svg`;
+    });
+  }
+
+  // Call this function when your script loads
+  preloadStarImages();
+
+  const API = {
+    trending: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}`,
+    genres: `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,
+  };
+
+  async function fetchMoviesData() {
+    try {
+      const [movieData, genreData] = await Promise.all([
+        fetch(API.trending).then(res => res.json()),
+        fetch(API.genres).then(res => res.json()),
+      ]);
+
+      const genreMap = Object.fromEntries(
+        genreData.genres.map(({ id, name }) => [id, name])
+      );
+
+      return movieData.results.slice(0, 3).map(movie => ({
+        ...movie,
+        genre_names: movie.genre_ids.map(id => genreMap[id]).join(', '),
+      }));
+    } catch (error) {
+      console.error('Error fetching movies or genres:', error);
+      return [];
+    }
+  }
+
+  function truncateGenres(genres, maxLength) {
+    return genres.split(', ').reduce((acc, genre) => {
+      return acc.length + genre.length + 2 <= maxLength
+        ? `${acc}, ${genre}`
+        : acc;
+    });
+  }
+
+  function createStarRating(rating) {
+    const fullStars = Math.floor(rating / 2);
+    const hasHalfStar = rating % 2 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    const starImg = type => starSvg[type];
+    return `
+    ${starImg('full').repeat(fullStars)}
+    ${hasHalfStar ? starImg('half') : ''}
+    ${starImg('empty').repeat(emptyStars)}
+  `;
+  }
+
+  function createMovieElement(movie) {
+    const {
+      title,
+      genre_names: genreNames,
+      poster_path: posterPath,
+      release_date: releaseDate,
+      vote_average: rating,
+    } = movie;
+
+    const movieElement = document.createElement('div');
+    movieElement.className = 'movie-head-poster';
+    movieElement.style.backgroundImage = `url(${IMAGE_BASE_URL}${posterPath})`;
+
+    const truncatedGenres = truncateGenres(genreNames, 15);
+    const releaseYear = new Date(releaseDate).getFullYear();
+    const starRating = createStarRating(rating);
+
+    movieElement.innerHTML = `
+    <p class="movie-head-t-title">${title}</p>
+    <div class="info-container">
+      <p class="movie-head-t-info">${truncatedGenres} | ${releaseYear}</p>
+      <span class="star-rating">${starRating}</span>
+    </div>
+  `;
+
+    return movieElement;
+  }
+
+  function displayMovies(movies) {
+    const movieContainer = document.querySelector('#movie-container');
+    const fragment = document.createDocumentFragment();
+    movies.forEach(movie => fragment.appendChild(createMovieElement(movie)));
+    movieContainer.innerHTML = '';
+    movieContainer.appendChild(fragment);
+  }
+
+  async function init() {
+    try {
+      const movies = await fetchMoviesData();
+      displayMovies(movies);
+    } catch (error) {
+      console.error('Failed to initialize:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+</script>
