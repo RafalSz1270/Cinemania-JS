@@ -30,6 +30,8 @@ body {
   margin: 0 20px;
 }
 
+// Header section styles start //
+
 header {
   display: flex;
   justify-content: space-between;
@@ -89,6 +91,9 @@ header .theme-switch {
   width: 44px;
   height: 18px;
 }
+
+// Modal section styles start //
+
 .modal {
   display: none;
   position: fixed;
@@ -151,6 +156,104 @@ header .theme-switch {
   align-items: center;
 }
 
+// Hero section styles start //
+
+.hero-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  max-width: 50%;
+}
+
+.hero-film-description {
+  max-width: 50%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.part-one {
+  width: 100%;
+}
+
+.hero {
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(
+      to right,
+      black 10%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.4) 60%,
+      transparent 100%
+    ),
+    url('https://s3-alpha-sig.figma.com/img/8d36/9c0e/1ca8b347be4119a1ea6cf45750a2bc51?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PnTyQdhXzeAXcvDBB-u9fdxAH-jh5Jrdkk4za9om2IQgj3ZSG2hq~1TKrxOgxQeO9E9kFQnoi-8gBWZcYS3H9UQ2t4Cly2bqbgLPcsXNOa1k6A4BVFwvsqz4U6zVPax8PhsjBTnxSHwxeuUPDSrs8lk9KGs~UNs1DxItUP7XrnSJqTq3qtCAzMgcWI8jVTtjFwUiSC8O23pZw6G-iVzKsc6mqgFZby3FB2EZ4j7gAMrytTH7kCAvMAsTy5ZmCjVpT8Ku1~Y0VHA7DXUBKLJLO~iUbvpXeFtE7cNTcSAG8AvPwc7c1CgIXepk2PF0~BXMeRPp3lfk2PZcT0YygbXE~w__');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.hero-details {
+  position: relative;
+  z-index: 1;
+  width: 242px;
+  height: 286px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-hero-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  color: rgba(17, 17, 17, 1);
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.right-hero-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.hero-button-block {
+  width: 242px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+
+// Hero section style end //
+
 ///************///
 ///************///
 ///MEDIA TABLET///
@@ -161,6 +264,8 @@ header .theme-switch {
   body {
     margin: 0 32px;
   }
+
+  // Header section styles start //
 
   header {
     height: 60px;
@@ -202,6 +307,38 @@ header .theme-switch {
     width: 60px;
     height: 24px;
   }
+  // Hero section start //
+
+  .hero {
+    height: 432px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 52px;
+  }
+
+  .right-hero-button {
+    width: 128px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .left-hero-button {
+    width: 128px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .hero-button-block {
+    width: 262px;
+    height: 40px;
+  }
+
+  // Hero section end //
 }
 
 ///*************///
@@ -212,4 +349,41 @@ header .theme-switch {
   header .main-menu-list {
     gap: 40px;
   }
+
+  // Hero section start //
+
+  .hero {
+    height: 720px;
+  }
+
+  .hero-title {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+
+  .hero-film-description {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .left-hero-button {
+    width: 139px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .right-hero-button {
+    width: 139px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero-button-block {
+    width: 291px;
+    height: 48px;
+  }
+
+  // Hero section end //
 }
