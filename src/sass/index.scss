@@ -156,6 +156,160 @@ header .theme-switch {
   align-items: center;
 }
 
+// Home section styles start //
+
+.home-txt-div {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 24px 0;
+}
+
+.weekly-home {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18.75px;
+  font-family: Roboto;
+}
+
+.see-all-home {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #f87719;
+  font-family: Roboto;
+}
+
+.movie-head-poster {
+  width: 280px;
+  height: 406px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 24px 2px #01010173;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.movie-home-div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movie-head-t-title {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.movie-head-t-info {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #b7b7b7;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star-rating {
+  font-size: 14px;
+  color: #ffd700; /* Gold color for stars */
+}
+
+.upcoming-div {
+  margin-top: 32px;
+}
+
+@media screen and (max-width: 767px) {
+  .movie-head-poster:nth-child(n + 2) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home-txt-div {
+    margin-top: 52px;
+  }
+
+  .weekly-home {
+    font-size: 24px;
+    line-height: 28.13px;
+  }
+
+  .see-all-home {
+    font-size: 24px;
+    line-height: 28.13px;
+  }
+
+  .movie-home-div {
+    gap: 16px;
+  }
+
+  .movie-head-poster {
+    width: 224px;
+    height: 325px;
+    padding: 12px;
+  }
+
+  .movie-head-t-info {
+    line-height: 18px;
+  }
+
+  .movie-head-t-title {
+    line-height: 18px;
+  }
+
+  .upcoming-div {
+    margin-top: 42px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .home-txt-div {
+    margin: 80px 0 28px 0;
+  }
+
+  .weekly-home {
+    font-size: 28px;
+    line-height: 32.81px;
+  }
+
+  .see-all-home {
+    font-size: 28px;
+    line-height: 32.81px;
+  }
+
+  .movie-head-poster {
+    width: 395px;
+    height: 574px;
+    padding: 20px;
+  }
+
+  .movie-head-t-info {
+    font-size: 20px;
+    line-height: 23.44px;
+  }
+
+  .movie-head-t-title {
+    font-size: 20px;
+    line-height: 23.44px;
+  }
+
+  .upcoming-div {
+    margin-top: 60px;
+  }
+}
+
 // Hero section styles start //
 
 .hero-title {
@@ -176,8 +330,12 @@ header .theme-switch {
   width: 100%;
 }
 
+div.hero {
+  margin: 0;
+}
+
 .hero {
-  margin: 0 auto;
+  margin: 0;
   position: relative;
   background: linear-gradient(
       to right,
