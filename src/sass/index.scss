@@ -429,6 +429,11 @@ div.hero {
     height: 60px;
   }
 
+  header .logo-link img {
+    width: 48px;
+    height: 48px;
+  }
+
   header span.logo-text {
     display: inline-block;
     font-family: Roboto;
@@ -456,6 +461,10 @@ div.hero {
     display: none;
   }
 
+  header .theme-switch img {
+    width: 60px;
+    height: 24px;
+  }
   // Hero section start //
 
   .hero {
@@ -495,6 +504,10 @@ div.hero {
 ///*************///
 
 @media screen and (min-width: 1280px) {
+  header .main-menu-list {
+    gap: 40px;
+  }
+
   // Hero section start //
 
   .hero {
