@@ -21,12 +21,31 @@ export const initializeModal = async () => {
   function openModal(movie) {
     const modalContent = document.querySelector('.modal-body');
     modalContent.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} Poster">
+    <img class="modal-move-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} Poster">
+    <div>
       <h2>${movie.title}</h2>
-      <p><strong>Vote / Votes</strong> ${movie.vote_average}/${movie.vote_count}</p>
-      <p><strong>Popularity</strong> ${movie.popularity}</p>
-      <p><strong>Genre</strong> ${movie.genre_names}</p>
-      <p><strong>About</strong> ${movie.overview}</p>
+        <table class="table-move-info">
+          <tr>
+              <td><strong>Vote / Votes</strong></td>
+              <td>${movie.vote_average}/${movie.vote_count}</td>
+          </tr>
+          <tr>
+              <td><strong>Popularity</strong></td>
+              <td>${movie.popularity}</td>
+          </tr>
+          <tr>
+              <td><strong>Genre</strong></td>
+              <td>${movie.genre_names}</td>
+          </tr>
+          <tr>
+              <td><strong>About</strong></td>
+              <td></td>
+          </tr>
+          <tr>
+            <td colspan="2">${movie.overview}</td>
+          </tr>
+        </table>
+    </div>
     `;
     modal.style.display = 'block';
   }
@@ -45,10 +64,10 @@ export const initializeModal = async () => {
 
   // Toggle add/remove from library
   toggleButton.onclick = function () {
-    if (toggleButton.innerText === 'Dodaj do My library') {
-      toggleButton.innerText = 'Usuń z My library';
+    if (toggleButton.innerText === 'Add to my library') {
+      toggleButton.innerText = 'Remove from my library';
     } else {
-      toggleButton.innerText = 'Dodaj do My library';
+      toggleButton.innerText = 'Add to my library';
     }
   };
 };
