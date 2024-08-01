@@ -16,15 +16,15 @@ preloadStarImages();
 const API = {
   trending: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}`,
   genres: `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,
-  upcoming: `${BASE_URL}/movie/upcoming?api_key=${API_KEY}`
+  upcoming: `${BASE_URL}/movie/upcoming?api_key=${API_KEY}`,
 };
 
-async function fetchMoviesData() {
+export async function fetchMoviesData(count = 3) {
   try {
     const [movieData, genreData, upcomingData] = await Promise.all([
       fetch(API.trending).then(res => res.json()),
       fetch(API.genres).then(res => res.json()),
-      fetch(API.upcoming).then(res => res.json())
+      fetch(API.upcoming).then(res => res.json()),
     ]);
 
     console.log('Movie Data:', movieData);
@@ -35,14 +35,14 @@ async function fetchMoviesData() {
       genreData.genres.map(({ id, name }) => [id, name])
     );
 
-    const trendingMovies = movieData.results.slice(0, 3).map(movie => ({
+    const trendingMovies = movieData.results.slice(0, count).map(movie => ({
       ...movie,
-      genre_names: movie.genre_ids.map(id => genreMap[id]).join(', ')
+      genre_names: movie.genre_ids.map(id => genreMap[id]).join(', '),
     }));
 
     const upcomingMovies = upcomingData.results.slice(0, 1).map(movie => ({
       ...movie,
-      genre_names: movie.genre_ids.map(id => genreMap[id]).join(', ')
+      genre_names: movie.genre_ids.map(id => genreMap[id]).join(', '),
     }))[0];
 
     return { trendingMovies, upcomingMovies };
@@ -60,7 +60,7 @@ function truncateGenres(genres, maxLength) {
   });
 }
 
-function createStarRating(rating) {
+export function createStarRating(rating) {
   const fullStars = Math.floor(rating / 2);
   const hasHalfStar = rating % 2 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
@@ -79,7 +79,7 @@ function createMovieElement(movie) {
     genre_names: genreNames,
     poster_path: posterPath,
     release_date: releaseDate,
-    vote_average: rating
+    vote_average: rating,
   } = movie;
 
   const movieElement = document.createElement('div');
@@ -101,8 +101,8 @@ function createMovieElement(movie) {
   return movieElement;
 }
 
-function displayMovies(movies) {
-  const movieContainer = document.querySelector('#movie-container');
+function displayMovies(movies, htmlQuery = '#movie-container') {
+  const movieContainer = document.querySelector(htmlQuery);
   const fragment = document.createDocumentFragment();
   movies.forEach(movie => fragment.appendChild(createMovieElement(movie)));
   movieContainer.innerHTML = '';
@@ -120,26 +120,45 @@ function updateUpcomingMovie(upcomingMovie) {
     vote_average: rating,
     vote_count: voteCount,
     popularity,
-    overview
+    overview,
   } = upcomingMovie;
 
-  document.querySelector('.upcoming-poster').style.backgroundImage = `url(${IMAGE_BASE_URL}${posterPath})`;
-  document.querySelectorAll('#upcoming-movie-title').forEach(el => el.textContent = title);
-  document.querySelectorAll('#release-date-home').forEach(el => el.textContent = new Date(releaseDate).toLocaleDateString());
-  document.querySelectorAll('#votes-home').forEach(el => el.textContent = `${rating.toFixed(1)} / ${voteCount}`);
-  document.querySelectorAll('#popularity-home').forEach(el => el.textContent = popularity.toFixed(1));
-  document.querySelectorAll('#genre-home').forEach(el => el.textContent = genreNames);
-  document.querySelectorAll('.about-home-info').forEach(el => el.textContent = overview);
+  document.querySelector(
+    '.upcoming-poster'
+  ).style.backgroundImage = `url(${IMAGE_BASE_URL}${posterPath})`;
+  document
+    .querySelectorAll('#upcoming-movie-title')
+    .forEach(el => (el.textContent = title));
+  document
+    .querySelectorAll('#release-date-home')
+    .forEach(
+      el => (el.textContent = new Date(releaseDate).toLocaleDateString())
+    );
+  document
+    .querySelectorAll('#votes-home')
+    .forEach(el => (el.textContent = `${rating.toFixed(1)} / ${voteCount}`));
+  document
+    .querySelectorAll('#popularity-home')
+    .forEach(el => (el.textContent = popularity.toFixed(1)));
+  document
+    .querySelectorAll('#genre-home')
+    .forEach(el => (el.textContent = genreNames));
+  document
+    .querySelectorAll('.about-home-info')
+    .forEach(el => (el.textContent = overview));
 }
 
-async function init() {
-  try {
-    const { trendingMovies, upcomingMovie } = await fetchMoviesData();
-    displayMovies(trendingMovies);
-    updateUpcomingMovie(upcomingMovie);
-  } catch (error) {
-    console.error('Failed to initialize:', error);
-  }
+export function initializeMovies(count = 3, htmlQuery = '#movie-container') {
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      console.log('Fetching movies...');
+      const { trendingMovies, upcomingMovies } = await fetchMoviesData(count);
+      console.log('Movies fetched:', trendingMovies);
+      displayMovies(trendingMovies, htmlQuery);
+      updateUpcomingMovie(upcomingMovies);
+      console.log('Movies should be displayed now');
+    } catch (error) {
+      console.error('Failed to initialize:', error);
+    }
+  });
 }
-
-document.addEventListener('DOMContentLoaded', init);
