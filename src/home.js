@@ -103,10 +103,11 @@ function createMovieElement(movie) {
 
 function displayMovies(movies, htmlQuery = '#movie-container') {
   const movieContainer = document.querySelector(htmlQuery);
+  movieContainer.innerHTML = '';
   const fragment = document.createDocumentFragment();
   movies.forEach(movie => fragment.appendChild(createMovieElement(movie)));
-  movieContainer.innerHTML = '';
   movieContainer.appendChild(fragment);
+  console.log(`Added ${movies.length} movies to ${htmlQuery}`);
 }
 
 function updateUpcomingMovie(upcomingMovie) {
@@ -154,6 +155,7 @@ export function initializeMovies(count = 3, htmlQuery = '#movie-container') {
       console.log('Fetching movies...');
       const { trendingMovies, upcomingMovies } = await fetchMoviesData(count);
       console.log('Movies fetched:', trendingMovies);
+      console.log('Displaying movies...');
       displayMovies(trendingMovies, htmlQuery);
       updateUpcomingMovie(upcomingMovies);
       console.log('Movies should be displayed now');
