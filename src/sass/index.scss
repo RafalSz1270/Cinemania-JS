@@ -226,6 +226,13 @@ header .theme-switch {
   font-size: 12px;
 }
 
+.left-hero-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
+}
+
 .right-hero-button {
   width: 117px;
   height: 38px;
@@ -240,6 +247,13 @@ header .theme-switch {
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
+}
+
+.right-hero-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
 }
 
 .hero-button-block {
