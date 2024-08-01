@@ -38,7 +38,7 @@ function truncateGenres(genres, maxLength) {
   });
 }
 
-function createStarRating(rating) {
+export function createStarRating(rating) {
   const fullStars = Math.floor(rating / 2);
   const hasHalfStar = rating % 2 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
