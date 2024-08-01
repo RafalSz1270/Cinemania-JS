@@ -6,5 +6,436 @@
   <div id="movie-container" class="movie-home-div"></div>
   <div class="upcoming-div">
     <h2 class="weekly-home">UPCOMING THIS MONTH</h2>
+    
+        
+    <!-- div for mobile  -->
+    <div class="only-mobile-upcoming-div">
+      <div class="upcoming-poster"></div>
+    <h3 id="upcoming-movie-title" class="upcoming-movie-title-style"></h3>
+    <div class="home-upcoming-text-mobile">
+      <div class="upcomingmovie-info">
+        <p>Release date</p>
+        <p>Vote / Votes</p>
+        <p>Popularity</p>
+        <p>Genre</p>
+      </div>
+      <div class="upcoming-home-info-answer">
+        <p id="release-date-home"></p>
+        <p id="votes-home"></p>
+        <p id="popularity-home"></p>
+        <p id="genre-home"></p>
+      </div>
+      <h3 class="weekly-home, about-home">ABOUT</h3>
+      <p class="about-home-info"></p>
+      <button type="submit" class="home-add-to-library">Add to my library</button>
+    </div>
+    </div>
+
+    <!-- div for tablet  -->
+    <div class="only-tablet-upcoming-div">
+      <div class="upcoming-poster" id="upcoming-movie-poster-id"></div>
+      <h3 id="upcoming-movie-title" class="upcoming-movie-title-style"> </h3>
+        <div>
+          <ul class="tablet-upcoming-info-ul tablet-upcoming-info-ul-first">
+            <li>
+              <strong class="upcomingmovie-info"></strong>
+              <p class="upcoming-home-info-answer" id="release-date-home"></p>
+            </li>
+            <li>
+              <strong class="upcomingmovie-info">Vote / Votes</strong>
+              <p class="upcoming-home-info-answer" id="votes-home"></p>
+            </li>
+          </ul>
+          </div>
+          <div>
+            <ul class="tablet-upcoming-info-ul tablet-upcoming-info-ul-secound">
+              <li>
+              <strong class="upcomingmovie-info">Popularit</strong>
+              <p class="upcoming-home-info-answer" id="popularity-home"></p>
+            </li>
+            <li>
+              <strong class="upcomingmovie-info">Genre</strong>
+              <p class="upcoming-home-info-answer" id="genre-home"></p>
+            </li>
+            </ul>
+          </div>
+          <h3 class="weekly-home, about-home">ABOUT</h3>
+      <p class="about-home-info"></p>
+      <button type="submit" class="home-add-to-library">Add to my library</button>
+    </div>
+
+
+    <!-- div for PC  -->
+    <div class="only-pc-upcoming-div">
+      <div class="upcoming-poster"></div>
+      <div style="margin-left: 20px;">
+        <h3 id="upcoming-movie-title" class="upcoming-movie-title-style"></h3>
+    <div class="home-upcoming-text-pc">
+      <div class="upcomingmovie-info">
+        <p>Release date</p>
+        <p>Vote / Votes</p>
+        <p>Popularity</p>
+        <p>Genre</p>
+      </div>
+      <div class="upcoming-home-info-answer">
+        <p id="release-date-home"></p>
+        <p id="votes-home"></p>
+        <p id="popularity-home"></p>
+        <p id="genre-home"></p>
+      </div>
+    </div>
+        <h3 class="weekly-home, about-home">ABOUT</h3>
+      <p class="about-home-info">
+        
+      </p>
+      <button type="submit" class="home-add-to-library">Add to my library</button>
+    </div>
+
+
   </div>
-</section>
+  <svg width="14" height="14">
+    <use href="./images/fullStar.svg"></use>
+  </svg>
+  <img src="./images/fullStar.svg" alt=""  />
+  <img src="./images/halfStar.svg" alt="" />
+  <img src="./images/emptyStar.svg" alt="" />
+  
+<section>
+
+<style>
+
+  ul {
+    list-style: none;
+  }
+
+  .home-txt-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 24px 0;
+  }
+
+  .weekly-home {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-family: Roboto;
+  }
+
+  .see-all-home {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    color: #f87719;
+    font-family: Roboto;
+  }
+
+  .movie-head-poster {
+    width: 280px;
+    height: 406px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 24px 2px #01010173;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .movie-home-div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .movie-head-t-title {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .movie-head-t-info {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #b7b7b7;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .star-rating {
+    font-size: 14px;
+    color: #ffd700; /* Gold color for stars */
+  }
+
+  .upcoming-div {
+    margin-top: 32px;
+  }
+
+  .upcoming-poster{
+    width: 280px;
+    height: 402px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 24px 2px #01010173;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 24px 0;
+  }
+
+  .upcoming-movie-title-style {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.44px;
+  }
+
+  .home-upcoming-text{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 20.53px 0;
+  }
+
+  .upcomingmovie-info {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px; 
+    color: #B7B7B7;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .upcoming-home-info-answer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+  }
+
+  .about-home {
+    color: #B7B7B7;
+    margin-bottom: 16px;
+  }
+
+  .about-home-info{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #F8F8F8;
+  }
+
+  .home-add-to-library {
+    margin: 32px 0 40px;
+    min-width: 140px;
+    height: 38px;
+    border-radius: 74px;
+    padding: 12px 24px;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+    color: #111;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.06px;
+    border: #111;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 767px) {
+    .movie-head-poster:nth-child(n + 2) {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    
+  }
+    .only-mobile-upcoming-div,
+    .only-pc-upcoming-div {
+      display: none;
+    }
+
+
+  @media screen and (min-width: 768px) {
+
+    .home-txt-div {
+      margin-top: 52px;
+    }
+
+    .weekly-home {
+      font-size: 24px;
+      line-height: 28.13px;
+    }
+
+    .see-all-home {
+      font-size: 24px;
+      line-height: 28.13px;
+    }
+
+    .movie-home-div {
+      gap: 16px;
+    }
+
+    .movie-head-poster {
+      width: 224px;
+      height: 325px;
+      padding: 12px;
+    }
+
+    .movie-head-t-info {
+      line-height: 18px;
+    }
+
+    .movie-head-t-title {
+      line-height: 18px;
+    }
+
+    .upcoming-div {
+    margin-top: 44px;
+  }
+
+  .upcoming-poster{
+    width: 704px;
+    height: 400px;
+  }
+
+  .upcoming-movie-title-style {
+    font-size: 28px;
+    line-height: 32.81px;
+  }
+
+  .tablet-upcoming-info-ul {
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .tablet-upcoming-info-ul-first{
+    margin: 24px 0 12px;
+  }
+
+  .tablet-upcoming-info-ul-secound{
+    margin-bottom: 20px;
+  }
+
+  .upcoming-home-info-answer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+  }
+
+  .home-add-to-library {
+    margin: 20px 0 77px;
+    min-width: 155px;
+    height: 40px;
+    display: block;
+  }
+
+  }
+
+  @media screen and (min-width: 1280px) {
+
+    .only-mobile-upcoming-div,
+    .only-tablet-upcoming-div{
+      display: none;
+    }
+    
+    .home-txt-div {
+      margin: 80px 0 28px 0;
+    }
+
+    .weekly-home {
+      font-size: 28px;
+      line-height: 32.81px;
+      margin-bottom: 28px;
+    }
+
+    .see-all-home {
+      font-size: 28px;
+      line-height: 32.81px;
+    }
+
+    .movie-head-poster {
+      width: 395px;
+      height: 574px;
+      padding: 20px;
+    }
+
+    .movie-head-t-info {
+      font-size: 20px;
+      line-height: 23.44px;
+    }
+
+    .movie-head-t-title {
+      font-size: 20px;
+      line-height: 23.44px;
+    }
+
+    .only-pc-upcoming-div{
+      display: flex;
+    }
+
+    .upcoming-div {
+      margin-top: 60px;
+    }
+
+  .upcoming-poster{
+    width: 805px;
+    height: 458px;
+    margin: 0;
+  }
+
+  .home-upcoming-text-pc {
+    display: flex;
+  }
+
+  .upcoming-movie-title-style {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.44px;
+  }
+
+  .about-home-info {
+    text-wrap: pretty;
+    width: 390px;
+  }
+
+  .upcomingmovie-info{
+    margin-right: 56px;
+  }
+
+  .home-upcoming-text{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .home-add-to-library {
+    margin: 20px 0 0 0;
+    max-width: 155px;
+    height: 40px;
+    display: block;
+  }
+  }
+</style>
