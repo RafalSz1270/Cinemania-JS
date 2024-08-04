@@ -108,10 +108,10 @@ header .theme-switch {
 }
 
 .modal-content {
-  margin: 15% auto;
+  margin: auto;
   padding: 20px;
   border-radius: 20px;
-  width: 80%;
+  width: 50%;
   
   background-color: rgb(0, 0, 0);
 }
@@ -142,7 +142,7 @@ header .theme-switch {
 
 .modal-body img {
   width: 100%;
-  // max-width: 200px;
+  max-width: 300px;
   display: block;
   // margin: 0 auto 20px;
 }

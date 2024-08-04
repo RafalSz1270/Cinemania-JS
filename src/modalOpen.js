@@ -45,7 +45,9 @@ export const initializeModal = async () => {
             <td colspan="2">${movie.overview}</td>
           </tr>
         </table>
-        
+        <button class="toggleLibrary" id="toggleLibrary">
+          Add to my library
+        </button>
     </div>
     `;
     modal.style.display = 'block';
