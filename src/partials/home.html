@@ -10,19 +10,21 @@
     <!-- div for mobile  -->
     <div class="only-mobile-upcoming-div">
       <div class="upcoming-poster"></div>
-      <h3 id="upcoming-movie-title" class="upcoming-movie-title-style"></h3>
+      <h3 id="upcoming-movie-title-mobile" class="upcoming-movie-title-style"></h3>
       <div class="home-upcoming-text-mobile">
-        <div class="upcomingmovie-info">
-          <p>Release date</p>
-          <p>Vote / Votes</p>
-          <p>Popularity</p>
-          <p>Genre</p>
-        </div>
-        <div class="upcoming-home-info-answer">
-          <p id="release-date-home"></p>
-          <p id="votes-home"></p>
-          <p id="popularity-home"></p>
-          <p id="genre-home"></p>
+        <div style="display: flex;">
+          <div class="upcomingmovie-info">
+            <p>Release date</p>
+            <p>Vote / Votes</p>
+            <p>Popularity</p>
+            <p>Genre</p>
+          </div>
+          <div class="upcoming-home-info-answer">
+            <p id="release-date-home-mobile"></p>
+            <p id="votes-home-mobile"></p>
+            <p id="popularity-home-mobile"></p>
+            <p id="genre-home-mobile"></p>
+          </div>
         </div>
         <h3 class="weekly-home, about-home">ABOUT</h3>
         <p class="about-home-info"></p>
@@ -34,32 +36,35 @@
 
     <!-- div for tablet  -->
     <div class="only-tablet-upcoming-div">
-      <div class="upcoming-poster" id="upcoming-movie-poster-id"></div>
-      <h3 id="upcoming-movie-title" class="upcoming-movie-title-style"></h3>
-      <div>
-        <ul class="tablet-upcoming-info-ul tablet-upcoming-info-ul-first">
-          <li>
-            <strong class="upcomingmovie-info"></strong>
-            <p class="upcoming-home-info-answer" id="release-date-home"></p>
-          </li>
-          <li>
-            <strong class="upcomingmovie-info">Vote / Votes</strong>
-            <p class="upcoming-home-info-answer" id="votes-home"></p>
-          </li>
-        </ul>
+      <div class="upcoming-poster"></div>
+      <h3 id="upcoming-movie-title-tablet" class="upcoming-movie-title-style"></h3>
+      <div class="tablet-upcoming-display">
+        <div>
+          <ul class="tablet-upcoming-info-ul">
+            <li class="tablet-li-home-info">
+              <strong class="upcomingmovie-info">Release date</strong>
+              <p class="upcoming-home-info-answer" id="release-date-home-tablet"></p>
+            </li>
+            <li class="tablet-li-home-info">
+              <strong class="upcomingmovie-info">Vote / Votes</strong>
+              <p class="upcoming-home-info-answer" id="votes-home-tablet"></p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="tablet-upcoming-info-ul">
+            <li class="tablet-li-home-info">
+              <strong class="upcomingmovie-info upcoming-info-popularity">Popularity</strong>
+              <p class="upcoming-home-info-answer" id="popularity-home-tablet"></p>
+            </li>
+            <li class="tablet-li-home-info">
+              <strong class="upcomingmovie-info">Genre</strong>
+              <p class="upcoming-home-info-answer" id="genre-home-tablet"></p>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <ul class="tablet-upcoming-info-ul tablet-upcoming-info-ul-secound">
-          <li>
-            <strong class="upcomingmovie-info">Popularit</strong>
-            <p class="upcoming-home-info-answer" id="popularity-home"></p>
-          </li>
-          <li>
-            <strong class="upcomingmovie-info">Genre</strong>
-            <p class="upcoming-home-info-answer" id="genre-home"></p>
-          </li>
-        </ul>
-      </div>
+      
       <h3 class="weekly-home, about-home">ABOUT</h3>
       <p class="about-home-info"></p>
       <button type="submit" class="home-add-to-library">
@@ -71,7 +76,7 @@
     <div class="only-pc-upcoming-div">
       <div class="upcoming-poster"></div>
       <div style="margin-left: 20px">
-        <h3 id="upcoming-movie-title" class="upcoming-movie-title-style"></h3>
+        <h3 id="upcoming-movie-title-pc" class="upcoming-movie-title-style"></h3>
         <div class="home-upcoming-text-pc">
           <div class="upcomingmovie-info">
             <p>Release date</p>
@@ -80,10 +85,10 @@
             <p>Genre</p>
           </div>
           <div class="upcoming-home-info-answer">
-            <p id="release-date-home"></p>
-            <p id="votes-home"></p>
-            <p id="popularity-home"></p>
-            <p id="genre-home"></p>
+            <p id="release-date-home-pc"></p>
+            <p id="votes-home-pc"></p>
+            <p id="popularity-home-pc"></p>
+            <p id="genre-home-pc"></p>
           </div>
         </div>
         <h3 class="weekly-home, about-home">ABOUT</h3>
@@ -93,7 +98,5 @@
         </button>
       </div>
     </div>
-
-    <section></section>
   </div>
 </section>

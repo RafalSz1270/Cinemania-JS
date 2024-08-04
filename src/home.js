@@ -52,12 +52,9 @@ export async function fetchMoviesData(count = 3) {
   }
 }
 
-function truncateGenres(genres, maxLength) {
-  return genres.split(', ').reduce((acc, genre) => {
-    return acc.length + genre.length + 2 <= maxLength
-      ? `${acc}, ${genre}`
-      : acc;
-  });
+function truncateGenres(genres, maxCount = 2) {
+  const genreArray = genres.split(', ');
+  return genreArray.slice(0, maxCount).join(', ');
 }
 
 export function createStarRating(rating) {
@@ -86,7 +83,7 @@ function createMovieElement(movie) {
   movieElement.className = 'movie-head-poster';
   movieElement.style.backgroundImage = `url(${IMAGE_BASE_URL}${posterPath})`;
 
-  const truncatedGenres = truncateGenres(genreNames, 15);
+  const truncatedGenres = truncateGenres(genreNames);
   const releaseYear = new Date(releaseDate).getFullYear();
   const starRating = createStarRating(rating);
 
@@ -124,29 +121,44 @@ function updateUpcomingMovie(upcomingMovie) {
     overview,
   } = upcomingMovie;
 
-  document.querySelector(
-    '.upcoming-poster'
-  ).style.backgroundImage = `url(${IMAGE_BASE_URL}${posterPath})`;
-  document
-    .querySelectorAll('#upcoming-movie-title')
-    .forEach(el => (el.textContent = title));
-  document
-    .querySelectorAll('#release-date-home')
-    .forEach(
-      el => (el.textContent = new Date(releaseDate).toLocaleDateString())
-    );
-  document
-    .querySelectorAll('#votes-home')
-    .forEach(el => (el.textContent = `${rating.toFixed(1)} / ${voteCount}`));
-  document
-    .querySelectorAll('#popularity-home')
-    .forEach(el => (el.textContent = popularity.toFixed(1)));
-  document
-    .querySelectorAll('#genre-home')
-    .forEach(el => (el.textContent = genreNames));
-  document
-    .querySelectorAll('.about-home-info')
-    .forEach(el => (el.textContent = overview));
+  const formattedDate = new Date(releaseDate)
+    .toLocaleDateString('pl-PL', { year: 'numeric', month: '2-digit', day: '2-digit' })
+    .replace(/\//g, '.');
+
+  document.querySelectorAll('.upcoming-poster').forEach(el => {
+    el.style.backgroundImage = `url(${IMAGE_BASE_URL}${posterPath})`;
+  });
+
+  document.querySelectorAll('#upcoming-movie-title-mobile, #upcoming-movie-title-tablet, #upcoming-movie-title-pc').forEach(el => {
+    el.textContent = title;
+  });
+
+  document.querySelectorAll('#release-date-home-mobile, #release-date-home-tablet, #release-date-home-pc').forEach(el => {
+    el.textContent = formattedDate;
+    el.style.color = '#F87719';
+  });
+
+  document.querySelectorAll('#votes-home-mobile, #votes-home-tablet, #votes-home-pc').forEach(el => {
+    el.innerHTML = `
+      <div class="votes-wrapper">
+        <div class="votes-wrapper-info">${rating.toFixed(1)}</div>
+        <span>/</span>
+        <div class="votes-wrapper-info">${voteCount}</div>
+      </div>
+    `;
+  });
+
+  document.querySelectorAll('#popularity-home-mobile, #popularity-home-tablet, #popularity-home-pc').forEach(el => {
+    el.textContent = popularity.toFixed(1);
+  });
+
+  document.querySelectorAll('#genre-home-mobile, #genre-home-tablet, #genre-home-pc').forEach(el => {
+    el.textContent = truncateGenres(genreNames);
+  });
+
+  document.querySelectorAll('.about-home-info').forEach(el => {
+    el.textContent = overview;
+  });
 }
 
 export function initializeMovies(count = 3, htmlQuery = '#movie-container') {

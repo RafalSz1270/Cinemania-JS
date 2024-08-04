@@ -30,6 +30,10 @@ body {
   margin: 0 20px;
 }
 
+ul {
+  list-style: none;
+}
+
 // Header section styles start //
 
 header {
@@ -158,6 +162,42 @@ header .theme-switch {
 
 // Home section styles start //
 
+@media screen and (max-width: 767px) {
+  .movie-head-poster:nth-child(n + 2) {
+    display: none;
+  }
+
+  .only-tablet-upcoming-div {
+    display: none;
+  }
+}
+
+#votes-home-mobile,
+#votes-home-tablet,
+#votes-home-pc {
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.votes-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.votes-wrapper span {
+  color: #fff; 
+}
+
+.votes-wrapper-info {
+  background-color: #fff;
+  color: #111;
+  border-radius: 5px;
+  padding: 1px 8px 1px 8px;
+}
+
 .home-txt-div {
   display: flex;
   justify-content: space-between;
@@ -185,6 +225,7 @@ header .theme-switch {
   font-size: 20px;
   font-weight: 500;
   line-height: 23.44px;
+  margin: 24px 0 20px;
 }
 
 .home-upcoming-text {
@@ -200,6 +241,7 @@ header .theme-switch {
   line-height: 18.75px;
   color: #b7b7b7;
   display: flex;
+  text-wrap: nowrap;
   flex-direction: column;
   gap: 12px;
 }
@@ -216,7 +258,7 @@ header .theme-switch {
 
 .about-home {
   color: #b7b7b7;
-  margin-bottom: 16px;
+  margin: 20px 0 16px;
 }
 
 .about-home-info {
@@ -247,6 +289,7 @@ header .theme-switch {
 }
 
 .weekly-home {
+  margin-bottom: 24px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18.75px;
@@ -282,7 +325,7 @@ header .theme-switch {
 .movie-home-div {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .movie-head-t-title {
@@ -316,39 +359,18 @@ header .theme-switch {
   margin-top: 32px;
 }
 
-.only-mobile-upcoming-div,
-.only-tablet-upcoming-div {
-  display: none;
-}
-
-.only-pc-upcoming-div {
-  display: flex;
-}
-
 .upcoming-div {
   margin-top: 60px;
 }
 
 .upcoming-poster {
-  width: 805px;
-  height: 458px;
+  width: 280px;
+  height: 402px;
   margin: 0;
 }
 
 .home-upcoming-text-pc {
   display: flex;
-}
-
-.upcoming-movie-title-style {
-  font-family: Roboto;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 23.44px;
-}
-
-.about-home-info {
-  text-wrap: pretty;
-  width: 390px;
 }
 
 .upcomingmovie-info {
@@ -367,11 +389,6 @@ header .theme-switch {
   height: 40px;
   display: block;
 }
-
-// PO CO TO????
-// .movie-head-poster:nth-child(n + 2) {
-//   display: none;
-// }
 
 // Hero section styles start //
 
@@ -560,6 +577,14 @@ div.hero {
 
   // Home section start //
 
+  .tablet-li-home-info {
+    display: flex;
+  }
+
+  .only-mobile-upcoming-div {
+    display: none;
+  }
+
   .home-txt-div {
     margin-top: 52px;
   }
@@ -592,8 +617,11 @@ div.hero {
     line-height: 18px;
   }
 
-  .upcoming-div {
-    margin-top: 42px;
+  .tablet-upcoming-display {
+    display: flex;
+    align-items: baseline;
+    margin: 24px 0 12px;
+    justify-content: space-between;
   }
 
   .upcoming-div {
@@ -608,19 +636,22 @@ div.hero {
   .upcoming-movie-title-style {
     font-size: 28px;
     line-height: 32.81px;
+    margin: 32px 0 24px;
+  }
+
+  .upcoming-info-popularity {
+    margin-right: 27px;
   }
 
   .tablet-upcoming-info-ul {
     justify-content: space-between;
     display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .tablet-upcoming-info-ul-first {
-    margin: 24px 0 12px;
-  }
-
-  .tablet-upcoming-info-ul-secound {
-    margin-bottom: 20px;
+    gap: 12px;
   }
 
   .upcoming-home-info-answer {
@@ -644,6 +675,12 @@ div.hero {
 ///*************///
 ///MEDIA DESKTOP///
 ///*************///
+/// 
+@media screen and (max-width: 1280px) {
+  .only-pc-upcoming-div{
+    display: none;
+  }
+}
 
 @media screen and (min-width: 1280px) {
   header .main-menu-list {
@@ -717,6 +754,14 @@ div.hero {
     line-height: 23.44px;
   }
 
+  .only-pc-upcoming-div {
+    display: flex;
+  }
+
+  .upcoming-movie-title-style {
+    margin: 0;
+  }
+
   .upcoming-div {
     margin-top: 60px;
   }
@@ -724,10 +769,6 @@ div.hero {
   .only-mobile-upcoming-div,
   .only-tablet-upcoming-div {
     display: none;
-  }
-
-  .only-pc-upcoming-div {
-    display: flex;
   }
 
   .upcoming-poster {
@@ -738,6 +779,7 @@ div.hero {
 
   .home-upcoming-text-pc {
     display: flex;
+    margin-top: 28px;
   }
 
   .about-home-info {
