@@ -45,6 +45,7 @@ export const initializeModal = async () => {
             <td colspan="2">${movie.overview}</td>
           </tr>
         </table>
+        
     </div>
     `;
     modal.style.display = 'block';
