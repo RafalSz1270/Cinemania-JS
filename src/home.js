@@ -19,36 +19,52 @@ const API = {
   upcoming: `${BASE_URL}/movie/upcoming?api_key=${API_KEY}`,
 };
 
-export async function fetchMoviesData(count = 3) {
+export async function fetchMoviesData(
+  endpoints = ['trending', 'genres'],
+  count = 3
+) {
   try {
-    const [movieData, genreData, upcomingData] = await Promise.all([
-      fetch(API.trending).then(res => res.json()),
-      fetch(API.genres).then(res => res.json()),
-      fetch(API.upcoming).then(res => res.json()),
-    ]);
-
-    console.log('Movie Data:', movieData);
-    console.log('Genre Data:', genreData);
-    console.log('Upcoming Data:', upcomingData);
-
-    const genreMap = Object.fromEntries(
-      genreData.genres.map(({ id, name }) => [id, name])
+    const fetchPromises = endpoints.map(endpoint =>
+      fetch(API[endpoint]).then(res => res.json())
     );
 
-    const trendingMovies = movieData.results.slice(0, count).map(movie => ({
-      ...movie,
-      genre_names: movie.genre_ids.map(id => genreMap[id]).join(', '),
-    }));
+    const fetchedData = await Promise.all(fetchPromises);
 
-    const upcomingMovies = upcomingData.results.slice(0, 1).map(movie => ({
-      ...movie,
-      genre_names: movie.genre_ids.map(id => genreMap[id]).join(', '),
-    }))[0];
+    console.log('Fetched Data:', fetchedData);
 
-    return { trendingMovies, upcomingMovies };
+    const dataMap = Object.fromEntries(
+      endpoints.map((endpoint, index) => [endpoint, fetchedData[index]])
+    );
+
+    let genreMap = {};
+    if (dataMap.genres) {
+      genreMap = Object.fromEntries(
+        dataMap.genres.genres.map(({ id, name }) => [id, name])
+      );
+    }
+
+    const processMovies = (movies, count) =>
+      movies.slice(0, count).map(movie => ({
+        ...movie,
+        genre_names: movie.genre_ids
+          ? movie.genre_ids.map(id => genreMap[id]).join(', ')
+          : '',
+      }));
+
+    const result = {};
+
+    if (dataMap.trending) {
+      result.trendingMovies = processMovies(dataMap.trending.results, count);
+    }
+
+    if (dataMap.upcoming) {
+      result.upcomingMovies = processMovies(dataMap.upcoming.results, 1)[0];
+    }
+
+    return result;
   } catch (error) {
-    console.error('Error fetching movies or genres:', error);
-    return { trendingMovies: [], upcomingMovies: null };
+    console.error('Error fetching data:', error);
+    return {};
   }
 }
 
@@ -165,7 +181,10 @@ export function initializeMovies(count = 3, htmlQuery = '#movie-container') {
   document.addEventListener('DOMContentLoaded', async () => {
     try {
       console.log('Fetching movies...');
-      const { trendingMovies, upcomingMovies } = await fetchMoviesData(count);
+      const { trendingMovies, upcomingMovies } = await fetchMoviesData(
+        ['trending', 'genres', 'upcoming'],
+        count
+      );
       console.log('Movies fetched:', trendingMovies);
       console.log('Displaying movies...');
       displayMovies(trendingMovies, htmlQuery);

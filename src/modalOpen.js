@@ -7,18 +7,19 @@ export const initializeModal = async () => {
   const movieContainer = document.querySelector('#movie-container');
 
   // Fetch movie data
-  const movies = await fetchMoviesData();
+  const { trendingMovies } = await fetchMoviesData(['trending', 'genres'], 3);
 
   // Add click event listeners to movie posters
   movieContainer.addEventListener('click', event => {
     const moviePoster = event.target.closest('.movie-head-poster');
     if (moviePoster) {
       const index = Array.from(movieContainer.children).indexOf(moviePoster);
-      openModal(movies[index]);
+      openModal(trendingMovies[index]);
     }
   });
 
   function openModal(movie) {
+    if (!movie) return;
     const modalContent = document.querySelector('.modal-body');
     modalContent.innerHTML = `
       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} Poster">
