@@ -112,11 +112,11 @@ header .theme-switch {
 }
 
 .modal-content {
-  margin: 15% auto;
+  margin: 15px auto;
   padding: 20px;
   border-radius: 20px;
   width: 80%;
-  
+  // height: 110%;
   background-color: rgb(0, 0, 0);
 }
 
@@ -161,15 +161,15 @@ header .theme-switch {
   align-items: center;
 }
 .toggleLibrary {
-  width: 140pxpx;
-  height: 40pxpx;
+  // width: 140px;
+  // height: 40px;
   top: 436px;
   left: 455px;
   padding: 12px;
   background-color: #000;
   border: solid;
   border-radius: 50px;
-  
+
   border-color: #f87719;
   color: #f8f8f8;
 }
@@ -177,7 +177,6 @@ header .theme-switch {
 .table-move-info {
   width: 100%;
   margin: 20px auto;
-  
 }
 
 th,
@@ -315,7 +314,7 @@ div.hero {
 }
 
 .votes-wrapper span {
-  color: #fff; 
+  color: #fff;
 }
 
 .votes-wrapper-info {
@@ -700,8 +699,23 @@ div.hero {
   // Modal section start //
   .modal-body {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     gap: 20px;
-    
+  }
+
+  img.modal-move-poster {
+    width: 300px;
+    flex: 0 0 20%;
+  }
+
+  div.modal-body div.movie-info {
+    flex: 2 0 0%;
+  }
+
+  button.toggleLibrary {
+    flex-basis: 100%;
+    margin-top: 20px;
   }
   // Modal section end //
 }
@@ -709,9 +723,9 @@ div.hero {
 ///*************///
 ///MEDIA DESKTOP///
 ///*************///
-/// 
+///
 @media screen and (max-width: 1280px) {
-  .only-pc-upcoming-div{
+  .only-pc-upcoming-div {
     display: none;
   }
 }
@@ -837,16 +851,15 @@ div.hero {
     height: 40px;
     display: block;
   }
-   // Modal section start //
-  
-   .modal-body {
-    
-     display: flex;
-     gap: 20px;
-   }
-   .modal-move-poster {
-    width: 30%;
-   }
+  // Modal section start //
 
-   // Modal section end //
+  .modal-body {
+    display: flex;
+    gap: 20px;
+  }
+  .modal-move-poster {
+    width: 30%;
+  }
+
+  // Modal section end //
 }
