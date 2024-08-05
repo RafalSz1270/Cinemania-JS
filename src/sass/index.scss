@@ -107,20 +107,21 @@ header .theme-switch {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border-radius: 20px;
   width: 80%;
-  max-width: 600px;
+  
+  background-color: rgb(0, 0, 0);
 }
 
 .close {
-  color: #aaa;
+  color: #f8f8f8;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -128,7 +129,7 @@ header .theme-switch {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #f87719;
   text-decoration: none;
   cursor: pointer;
 }
@@ -145,9 +146,9 @@ header .theme-switch {
 
 .modal-body img {
   width: 100%;
-  max-width: 200px;
+  // max-width: 200px;
   display: block;
-  margin: 0 auto 20px;
+  // margin: 0 auto 20px;
 }
 
 .modal-body p {
@@ -159,6 +160,132 @@ header .theme-switch {
   justify-content: space-between;
   align-items: center;
 }
+.toggleLibrary {
+  width: 140pxpx;
+  height: 40pxpx;
+  top: 436px;
+  left: 455px;
+  padding: 12px;
+  background-color: #000;
+  border: solid;
+  border-radius: 50px;
+  
+  border-color: #f87719;
+  color: #f8f8f8;
+}
+
+.table-move-info {
+  width: 100%;
+  margin: 20px auto;
+  
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+// Hero section styles start //
+
+.hero-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  max-width: 50%;
+}
+
+.hero-film-description {
+  max-width: 50%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.part-one {
+  width: 100%;
+}
+
+div.hero {
+  margin: 0;
+}
+
+.hero {
+  margin: 0;
+  position: relative;
+  background: linear-gradient(
+      to right,
+      black 10%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.4) 60%,
+      transparent 100%
+    ),
+    url('../images/hero-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.hero-details {
+  position: relative;
+  z-index: 1;
+  width: 242px;
+  height: 286px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-hero-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  color: rgba(17, 17, 17, 1);
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.right-hero-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.hero-button-block {
+  width: 242px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+
+// Hero section style end //
 
 // Home section styles start //
 
@@ -390,107 +517,6 @@ header .theme-switch {
   display: block;
 }
 
-// Hero section styles start //
-
-.hero-title {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
-  max-width: 50%;
-}
-
-.hero-film-description {
-  max-width: 50%;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-}
-
-.part-one {
-  width: 100%;
-}
-
-div.hero {
-  margin: 0;
-}
-
-.hero {
-  margin: 0;
-  position: relative;
-  background: linear-gradient(
-      to right,
-      black 10%,
-      rgba(0, 0, 0, 0.8) 30%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.4) 60%,
-      transparent 100%
-    ),
-    url('../images/hero-background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 380px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.hero-details {
-  position: relative;
-  z-index: 1;
-  width: 242px;
-  height: 286px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.left-hero-button {
-  width: 117px;
-  height: 38px;
-  border-radius: 74px;
-  text-align: center;
-  display: inline-block;
-  line-height: 14px;
-  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
-  color: rgba(17, 17, 17, 1);
-  border: none;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-}
-
-.right-hero-button {
-  width: 117px;
-  height: 38px;
-  border-radius: 74px;
-  text-align: center;
-  display: inline-block;
-  line-height: 14px;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 255, 255, 1);
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-}
-
-.hero-button-block {
-  width: 242px;
-  height: 38px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-}
-
-// Hero section style end //
-
 ///************///
 ///************///
 ///MEDIA TABLET///
@@ -670,6 +696,14 @@ div.hero {
     height: 40px;
     display: block;
   }
+
+  // Modal section start //
+  .modal-body {
+    display: flex;
+    gap: 20px;
+    
+  }
+  // Modal section end //
 }
 
 ///*************///
@@ -803,4 +837,16 @@ div.hero {
     height: 40px;
     display: block;
   }
+   // Modal section start //
+  
+   .modal-body {
+    
+     display: flex;
+     gap: 20px;
+   }
+   .modal-move-poster {
+    width: 30%;
+   }
+
+   // Modal section end //
 }
