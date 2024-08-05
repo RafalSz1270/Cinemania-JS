@@ -138,39 +138,59 @@ function updateUpcomingMovie(upcomingMovie) {
   } = upcomingMovie;
 
   const formattedDate = new Date(releaseDate)
-    .toLocaleDateString('pl-PL', { year: 'numeric', month: '2-digit', day: '2-digit' })
+    .toLocaleDateString('pl-PL', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    })
     .replace(/\//g, '.');
 
   document.querySelectorAll('.upcoming-poster').forEach(el => {
     el.style.backgroundImage = `url(${IMAGE_BASE_URL}${posterPath})`;
   });
 
-  document.querySelectorAll('#upcoming-movie-title-mobile, #upcoming-movie-title-tablet, #upcoming-movie-title-pc').forEach(el => {
-    el.textContent = title;
-  });
+  document
+    .querySelectorAll(
+      '#upcoming-movie-title-mobile, #upcoming-movie-title-tablet, #upcoming-movie-title-pc'
+    )
+    .forEach(el => {
+      el.textContent = title;
+    });
 
-  document.querySelectorAll('#release-date-home-mobile, #release-date-home-tablet, #release-date-home-pc').forEach(el => {
-    el.textContent = formattedDate;
-    el.style.color = '#F87719';
-  });
+  document
+    .querySelectorAll(
+      '#release-date-home-mobile, #release-date-home-tablet, #release-date-home-pc'
+    )
+    .forEach(el => {
+      el.textContent = formattedDate;
+      el.style.color = '#F87719';
+    });
 
-  document.querySelectorAll('#votes-home-mobile, #votes-home-tablet, #votes-home-pc').forEach(el => {
-    el.innerHTML = `
+  document
+    .querySelectorAll('#votes-home-mobile, #votes-home-tablet, #votes-home-pc')
+    .forEach(el => {
+      el.innerHTML = `
       <div class="votes-wrapper">
         <div class="votes-wrapper-info">${rating.toFixed(1)}</div>
         <span>/</span>
         <div class="votes-wrapper-info">${voteCount}</div>
       </div>
     `;
-  });
+    });
 
-  document.querySelectorAll('#popularity-home-mobile, #popularity-home-tablet, #popularity-home-pc').forEach(el => {
-    el.textContent = popularity.toFixed(1);
-  });
+  document
+    .querySelectorAll(
+      '#popularity-home-mobile, #popularity-home-tablet, #popularity-home-pc'
+    )
+    .forEach(el => {
+      el.textContent = popularity.toFixed(1);
+    });
 
-  document.querySelectorAll('#genre-home-mobile, #genre-home-tablet, #genre-home-pc').forEach(el => {
-    el.textContent = truncateGenres(genreNames);
-  });
+  document
+    .querySelectorAll('#genre-home-mobile, #genre-home-tablet, #genre-home-pc')
+    .forEach(el => {
+      el.textContent = truncateGenres(genreNames);
+    });
 
   document.querySelectorAll('.about-home-info').forEach(el => {
     el.textContent = overview;
