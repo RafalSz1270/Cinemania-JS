@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const CLOSE_TRAILER = document.getElementById('close-trailer');
   const GET_STARTED_BTN = document.getElementById('get-started-button');
 
-  // Funkcja do generowania gwiazdek na podstawie ratingu
+  // Rating stars
   function generateStars(rating) {
     const fullStar = '<i class="fas fa-star"></i>';
     const halfStar = '<i class="fas fa-star-half-alt"></i>';
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ), url('https://image.tmdb.org/t/p/original${film.backdrop_path}')`;
 
     // Display rating as stars
-    const rating = film.vote_average / 2; // Przeskalowanie na 5-gwiazdkową skale
+    const rating = film.vote_average / 2;
     document.getElementById('hero-rating').innerHTML = generateStars(rating);
 
     WATCH_TRAILER_BTN.classList.remove('hidden');
