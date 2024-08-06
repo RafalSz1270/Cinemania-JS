@@ -214,10 +214,10 @@ div.hero {
   position: relative;
   background: linear-gradient(
       to right,
-      black 10%,
-      rgba(0, 0, 0, 0.8) 30%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.4) 60%,
+      black 20%,
+      rgba(0, 0, 0, 0.4) 30%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0) 60%,
       transparent 100%
     ),
     url('../images/hero-background.png');
