@@ -258,12 +258,20 @@ div.hero {
   font-size: 12px;
 }
 
+.left-hero-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
+}
+
+
 .right-hero-button {
   width: 117px;
   height: 38px;
   border-radius: 74px;
   text-align: center;
-  display: inline-block;
+  display: none;
   line-height: 14px;
   background-color: transparent;
   color: rgba(255, 255, 255, 1);
@@ -274,6 +282,13 @@ div.hero {
   font-size: 12px;
 }
 
+.right-hero-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
+}
+
 .hero-button-block {
   width: 242px;
   height: 38px;
@@ -282,6 +297,29 @@ div.hero {
   align-items: flex-start;
   padding: 0px;
   gap: 8px;
+}
+
+.watch-trailer-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  color: rgba(17, 17, 17, 1);
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.watch-trailer-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
 }
 
 // Hero section style end //
