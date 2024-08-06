@@ -215,3 +215,5 @@ export function initializeMovies(count = 3, htmlQuery = '#movie-container') {
     }
   });
 }
+
+
