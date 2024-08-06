@@ -1,12 +1,18 @@
 <section class="part-one">
   <div class="hero">
     <h1 class="hero-title">Film title</h1>
+    <p class="hero-film-rating">
+      <span id="hero-rating" class="star-rating-hero"></span>
+    </p>
     <p class="hero-film-description">
       Is a guide to creating a personalized movie theater experience. You'll
       need a projector, screen, and speakers.
     </p>
+
     <div class="hero-button-block">
-      <button class="left-hero-button" id="get-started-button">Get Started</button>
+      <button class="left-hero-button" id="get-started-button">
+        Get Started
+      </button>
       <button class="watch-trailer-button hidden">Watch Trailer</button>
       <button class="right-hero-button hidden">More details</button>
     </div>
@@ -26,6 +32,8 @@
   <div class="modal-content">
     <span class="close" id="close-trailer">&times;</span>
     <div id="trailer-container"></div>
-    <p id="no-trailer-message" style="display: none;">Sorry, trailer not available.</p>
+    <p id="no-trailer-message" style="display: none">
+      Sorry, trailer not available.
+    </p>
   </div>
 </div>
