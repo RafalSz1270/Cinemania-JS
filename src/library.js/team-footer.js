@@ -5,34 +5,25 @@ const teamCloseBtn = document.querySelector('.team__modal-close-btn');
 if (teamLink && teamBackdrop && teamCloseBtn) {
   function onLinkClick(event) {
     event.preventDefault();
-
     teamBackdrop.classList.remove('is-hidden');
     document.body.classList.add('modal-open');
-
     addAllEventListeners();
   }
 
   function onEscClick(event) {
-    event.preventDefault();
-
-    if (event.code !== 'Escape') {
-      return;
+    if (event.code === 'Escape') {
+      closingModalStaff();
     }
-
-    closingModalStaff();
   }
 
   function onBackdropClick(event) {
-    if (event.target.closest('.team__wrapper')) {
-      return;
+    if (!event.target.closest('.team__wrapper')) {
+      closingModalStaff();
     }
-
-    closingModalStaff();
   }
 
   function onCloseBtnClick(event) {
     event.preventDefault();
-
     closingModalStaff();
   }
 
@@ -46,7 +37,6 @@ if (teamLink && teamBackdrop && teamCloseBtn) {
     document.removeEventListener('keydown', onEscClick);
     teamBackdrop.removeEventListener('click', onBackdropClick);
     teamCloseBtn.removeEventListener('click', onCloseBtnClick);
-
     teamBackdrop.classList.add('is-hidden');
     document.body.classList.remove('modal-open');
   }
