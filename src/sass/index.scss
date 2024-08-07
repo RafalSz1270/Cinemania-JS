@@ -187,15 +187,19 @@ td {
 
 // Hero section styles start //
 
+.hidden {
+  display: none;
+}
+
 .hero-title {
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
-  max-width: 50%;
+  max-width: 30%;
 }
 
 .hero-film-description {
-  max-width: 50%;
+  max-width: 30%;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
@@ -214,15 +218,16 @@ div.hero {
   position: relative;
   background: linear-gradient(
       to right,
-      black 10%,
-      rgba(0, 0, 0, 0.8) 30%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.4) 60%,
+      black 15%,
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0) 60%,
       transparent 100%
     ),
     url('../images/hero-background.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: 100%;
   width: 100%;
   height: 380px;
   display: flex;
@@ -247,7 +252,7 @@ div.hero {
   height: 38px;
   border-radius: 74px;
   text-align: center;
-  display: inline-block;
+  display: none;
   line-height: 14px;
   background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
   color: rgba(17, 17, 17, 1);
@@ -256,6 +261,13 @@ div.hero {
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
+}
+
+.left-hero-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
 }
 
 .right-hero-button {
@@ -274,6 +286,13 @@ div.hero {
   font-size: 12px;
 }
 
+.right-hero-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
+}
+
 .hero-button-block {
   width: 242px;
   height: 38px;
@@ -282,6 +301,83 @@ div.hero {
   align-items: flex-start;
   padding: 0px;
   gap: 8px;
+}
+
+.watch-trailer-button {
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  text-align: center;
+  display: inline-block;
+  line-height: 14px;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  color: rgba(17, 17, 17, 1);
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.watch-trailer-button:hover {
+  color: orange;
+  background: white;
+  border-color: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border: 1px solid;
+}
+
+/* Stylizacja gwiazdek */
+.star-rating-hero {
+  font-size: 10px; /* Rozmiar gwiazdek */
+  color: orange; /* Kolor pełnych gwiazdek */
+}
+
+.star-rating-hero .fa-star {
+  color: orange; /* Kolor pełnych gwiazdek */
+}
+
+.star-rating-hero .fa-star-half-alt {
+  color: orange; /* Kolor połowicznych gwiazdek */
+}
+
+.star-rating-hero .fa-star:last-child {
+  color: orange; /* Kolor pustych gwiazdek */
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 // Hero section style end //
@@ -595,11 +691,21 @@ div.hero {
     line-height: 20px;
   }
 
+  .watch-trailer-button {
+    width: 128px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   .hero-button-block {
     width: 262px;
     height: 40px;
   }
 
+  .star-rating-hero {
+    font-size: 20px;
+  }
   // Home section start //
 
   .tablet-li-home-info {
@@ -758,6 +864,12 @@ div.hero {
     line-height: 24px;
   }
 
+  .watch-trailer-button {
+    width: 139px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+  }
   .right-hero-button {
     width: 139px;
     height: 48px;
@@ -770,6 +882,9 @@ div.hero {
     height: 48px;
   }
 
+  .star-rating-hero {
+    font-size: 30px;
+  }
   // Home section start //
 
   .home-txt-div {
