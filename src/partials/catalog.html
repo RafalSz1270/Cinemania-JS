@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <!-- <link rel="stylesheet" href="../sass/index.scss" />
+  <script type="module" src="../catalog.js" defer></script>-->
+</head>
+<section class="catalog">
+  <div class="catalog-hero">
+    <h2>Movie of the day</h2>
+    <div class="movie-of-the-day" id="movie-of-the-day">
+      <!-- Tutaj dynamicznie dodajemy film dnia -->
+    </div>
+  </div>
+
+  <div id="search-bar-container">
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Wyszukaj film..." />
+      <button type="submit">Szukaj</button>
+      <button type="button" id="clear-search" style="display: none">
+        &times;
+      </button>
+    </form>
+  </div>
+
+  <div id="catalog-film-list" class="catalog-film-list-block">
+    <!-- List film -->
+  </div>
+  <div id="pagination-container"></div>
+</section>
