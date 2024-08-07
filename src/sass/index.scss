@@ -224,6 +224,8 @@ td {
 
 .part-one {
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 div.hero {
@@ -376,7 +378,7 @@ div.hero {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: black;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
