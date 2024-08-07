@@ -1,0 +1,62 @@
+// Catalog section start //
+
+.catalog-film-list-block {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+.catalog-movie-head-poster {
+  width: 280px;
+  height: 406px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 24px 2px #01010173;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.catalog-movie-head-t-title {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.catalog-movie-head-t-info {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #b7b7b7;
+}
+.catalog-star-rating {
+  font-size: 14px;
+  color: #ffd700; /* Gold color for stars */
+}
+.catalog-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .catalog-movie-head-poster {
+    width: 280px;
+    height: 406px;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .catalog-movie-head-poster {
+    width: 395px;
+    height: 574px;
+    padding: 20px;
+  }
+}
+// Catalog section end //
