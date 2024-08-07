@@ -160,6 +160,23 @@ header .theme-switch {
   justify-content: space-between;
   align-items: center;
 }
+
+h2.team__title {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team__list li {
+  // border: 1px solid #aaa;
+  flex-basis: 15%;
+}
+
 .toggleLibrary {
   // width: 140px;
   // height: 40px;
